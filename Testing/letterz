@@ -1,0 +1,19 @@
+fish = "halibut"
+letterz = [letter for letter in fish]
+print(letterz)
+
+capital_letters = []
+for letter in fish:
+	capital_letters.append(letter.upper())
+print(capital_letters)
+
+
+capital_letterz = [letter.upper() for letter in fish]
+print(capital_letterz)
+
+Aug_temperatures = [101, 95, 98, 89, 80]
+
+hot_dayz = [temperature for temperature in Aug_temperatures if temperature > 90]
+
+print(hot_dayz)
+
