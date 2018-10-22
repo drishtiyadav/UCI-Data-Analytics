@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+<!-- Title -->
+  <title>Web Visualization Dashboard - Comparison</title>
+
+  <!-- BootStrap 3..3.7 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Javascript Javaquery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Javascript plug-ins -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="reset.css">
+  <!-- stylesheet  -->
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <!-- Navigation Bar begins -->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <!-- toggle button for small screen menu bar -->
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- Home glyphicon button and link to index page -->
+          <a class="navbar-brand" href="index.html"><span class="glyphicon glyphicon-home nav-color">&#32;Latitude</span></a>
+          </div>
+          <div id="navbar" class="nav navbar-nav navbar-right collapse navbar-collapse">
+            <!-- plots dropdown-menu -->
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" id="plots" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="True">Plots <span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="plots">
+                <li><a href="temperature.html">Max temperature</a></li>
+                <li><a href="humidity.html">Humidity</a></li>
+                <li><a href="cloudiness.html">Cloudiness</a></li>
+                <li><a href="wind speed.html">Wind Speed</a></li>
+              </ul>
+            </li>
+            <!-- link to Comparison page -->
+            <li><a href="comparison.html">Comparison</a></li>
+            <!-- link to Data page -->
+            <li><a href="data.html">Data</a></li>
+          </div>
+        </div>
+    <div class="clearfix"></div>
+  </nav>
+  <!-- Navigation bar ends. Content begins --> 
+<body>
+    <div class="container">
+          <div class="row">
+        <div class="col-md-12">
+            <div class="graphs">
+                <section>
+                    <h1><span class="graphs">Data</span></h1>
+                    <hr>
+                    <p>
+                    The following table includes all the data that was used to plot the graphs in this project.</p>
+                    <p>It seems to work well in Microsoft Edge but not in Google chrome.</p>
+                    <div class="table-responsive">
+                    <br/>
+                    <br/>
+                    <div id="cities_table">
+                <script>
+                  $(document).ready(function(){
+                  $.ajax({
+                    url:"Resources/cities.csv",
+                    datatype: "text",
+                    success:function(data)
+                    {
+                    var cities_data = data.split(/\r?\n|\r/);
+                    var table_data = '<table class="table table-bordered table-striped">';
+                    for(var count=0; count < cities_data.length; count++)
+                    {
+                        var cell_data = cities_data[count].split(",");
+                        table_data+= '<tr>';
+                        for(var cell_count = 0; cell_count <cell_data.length; cell_count++)
+                        {
+                            if(count === 0)
+                            {
+                                table_data += '<th>'+cell_data[cell_count]+'</th>';
+                            }
+                            else
+                            {
+                                table_data += '<td>'+cell_data[cell_count]+'</td>';
+                            }
+                        }
+                        table_data +='</tr>';
+                    }
+                    table_data +='</table>';
+                    $('#cities_table').html(table_data);
+                    }
+                });
+            });
+          </script>
+                    </div>
+                    </div>
+                </section>
+    </div>
+</body>
+<footer>
+  <div class="modal-footer col-md-12">© Copyright apples and peaches
+</div>
+</footer>
+</html>
+
+

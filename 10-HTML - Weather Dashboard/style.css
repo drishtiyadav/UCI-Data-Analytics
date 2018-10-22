@@ -1,0 +1,207 @@
+/* Custom styling */
+/*-- Navigation Bar style --*/
+.navbar {
+  background-color: white;
+}
+.navbar-brand {
+  width: 180px;
+  height: 50px;
+  background-color: #45b39d;
+  text-align: top-center;
+  text-decoration-color: white;
+}
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+  background-color: #45b39e;
+}
+.nav-color {
+  font-weight: bold;
+  font-size: x-large;  
+  color: white;
+  display: inline;
+  float: right;
+}
+.nav-color:hover, .nav-color:focus {
+  color: lightgrey;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  z-index:1000;
+  min-width: 160px;
+  font-size: 15px;
+}
+ul {
+  list-style-position: inside;
+  text-align: center;
+  font-size: 15px;  
+}
+/*-- background color --*/
+body {
+  background-color: #e5e8e8;
+}
+h1 {
+  padding: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #45b39d; /* the chosen green color */
+  text-align: left;
+  background-color: white;
+}
+/*-- Summary section in index.html --*/
+.summary {
+  height:550px;
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-bottom: 5%;
+  padding: 2px;
+  background-color: white;
+}
+.summary img {
+  margin-right: 3%;
+  margin-bottom: 3%;
+  float: left;
+  width: 380px;
+  height: auto;
+  display: block;
+}
+h4 {
+  color: #45b39d;  
+  padding: 5px;
+  text-align: center;
+}
+p {
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 20px;
+  color: black;
+  text-align: left;
+}
+/*-- Graphs thumbnail section in index.html --*/
+.thumbnail {
+  border-color: transparent;
+}
+a.thumbnail:hover, a.thumbnail:focus {
+  border-color: #45b39d; /* the chosen green color */
+  box-shadow: 3px 3px 2px grey;
+}
+.details {
+  height: 590px;
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-bottom: 2%;
+  padding: 2px;
+  background-color: white;
+  text-align: center;
+  display: table;
+} 
+.details img {
+  width: 70%;
+}
+
+/*-- graphs being shown in the Detailed graph pages --*/
+.graphs {
+  height: 120%;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 5%;
+  padding: 2px;
+  background-color: white; 
+}
+.graphs img {
+  width: 400px;
+}
+/*-- graph being shown in the page --*/
+.image-in-focus {
+  border-color: #45b39d;
+  box-shadow: 3px 3px 2px grey; /* for casting shadow on the graph displayed */
+}
+/*-- graphs being shown in the comparison page --*/
+.comparison {
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 1%;
+  margin-right: 15%;
+  margin-bottom: 1%;
+  text-align: center;
+  align-items: center;
+  background-color: white;
+
+}
+.comparison img {
+  margin-left: 20 auto;
+  width: 400px;
+}
+/*-- footer style --*/
+.modal-footer {
+  border-color: #45b39d;
+  border-width: 5px;
+  margin-bottom: 0px;
+  text-align: center;
+  background-color: grey; 
+  height: 70px;
+  color: white;
+  width: 100%;
+}
+/* Adding media queries to show the changes when the screen is smaller than 768 pixels */
+@media (max-width: 768px) {
+  .navbar li {
+    padding: 10px;
+  }
+
+  .navbar-header {
+    background-color: #45b39d;
+    width:105%;
+  }
+.graphs {
+  height:100%;
+  margin-left: 2%;
+  margin-right: 2%;
+  padding: 2px;
+  background-color: white; 
+}
+.details {
+  height: 120%;
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-bottom: 2%;
+  padding: 2px;
+  background-color: white;
+  text-align: center;
+  display: table;
+} 
+}
+/* Adding media queries to show the changes when the screen is smaller than 640 pixels */
+@media (max-width: 640px){
+.summary {
+  height: 120%;
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-bottom: 5%;
+  padding: 2px;
+  background-color: white;
+}
+.graphs {
+  height:100%;
+  margin-left: 2%;
+  margin-right: 2%;
+  padding: 2px;
+  background-color: white; 
+}
+/* Adding media queries to show the changes when the screen is smaller than 480 pixels */
+@media (max-width: 480px) {
+.summary {
+  height: 120%;
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-bottom: 5%;
+  padding: 2px;
+  background-color: white;
+}
+.graphs {
+  height:100%;
+  margin-left: 2%;
+  margin-right: 2%;
+  padding: 2px;
+  background-color: white; 
+}
+}
