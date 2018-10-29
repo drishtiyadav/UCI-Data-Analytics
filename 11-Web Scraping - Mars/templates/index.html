@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars Data</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/style.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <!-- Button to scrape the data -->
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row" id="mars-data">
+        <div class="col-md-12">
+          <h2><span align="center">Latest Mars News</span></h2>
+          <br>
+          <!-- loop for collection in the data -->
+            {% for item in mars_data %}
+            <!-- Mars News  -->
+          <h4>{{ item.mars_news_title }}</h4>
+          <p>{{ item.mars_news_paragraph }}</p>
+          <br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 featured-img">
+          <h2><span align="center">Featured Mars Image</span></h2>
+          <!-- Mars image -->
+          <img src= "{{item.mars_image}}">
+        </div>
+        <div class="col-md-4 weather">
+          <h4>Current Weather on Mars</h4>
+          <p>{{ item.mars_weather }}</p>
+        </div>
+        <div class="col-md-4">
+          <br>
+          <h4>Mars Facts</h4>
+          <table>
+              <!-- Mars Facts table -->
+              {{ item.mars_facts|safe }}
+
+          </table>        
+        </div>
+      </div>
+      </div class="row">
+        <div class="container-fluid">
+          <h2 class="hemisphere">Mars Hemispheres</h2>
+          <hr>
+          <div class="col-md-5 col-sm-3 hemi-block">
+            <!-- Mars Hemispheres -->
+          <a class="thumbnail"><img src="{{item.mars_hemisphere_images.0}}" alt="{{item.mars_hemisphere_names.0}}">
+              </a>
+              <h3>{{item.mars_hemisphere_names.0}}</h3>
+            </div>
+          <div class="col-md-5 col-sm-3 hemi-block">
+          <a class="thumbnail"><img src="{{item.mars_hemisphere_images.1}}" alt="{{item.mars_hemisphere_names.1}}">
+              </a>
+              <h3>{{item.mars_hemisphere_names.1}}</h3>
+          </div>
+          <div class="col-md-5 col-sm-3 hemi-block">
+          <a class="thumbnail"><img src="{{item.mars_hemisphere_images.2}}" alt="{{item.mars_hemisphere_names.2}}">
+              </a>
+              <h3>{{item.mars_hemisphere_names.2}}</h3>
+          </div>
+          <div class="col-md-5 col-sm-3 hemi-block  ">
+          <a class="thumbnail"><img src="{{item.mars_hemisphere_images.3}}" alt="{{item.mars_hemisphere_names.3}}">
+              </a>
+              <h3>{{item.mars_hemisphere_names.3}}</h3>
+          </div>
+
+
+        </div>
+
+          </div>
+        </div>
+        {% endfor %}
+</body>
+
+</html>
+
