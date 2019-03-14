@@ -33,5 +33,5 @@ Deploy the Flask app to Heroku.
 
 ### Copyright
 
-Data Boot Camp Â© 2018. All Rights Reserved.
+Data Boot Camp © 2018. All Rights Reserved.
 
